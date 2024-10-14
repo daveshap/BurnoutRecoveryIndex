@@ -3,6 +3,16 @@
 ## Purpose
 This project aims to create a reliable self-assessment inventory to measure burnout without medical interventions. The Burnout Recovery Index provides individuals with an objective tool to assess their current level of burnout and track changes over time.
 
+## Methodology
+The assessment is based on:
+- Likert-scale questions (1-5 rating)
+- Bipolar question pairs (positive and negative framing)
+- Split-half consistency to reduce response bias
+- 12 categories of symptoms typically associated with burnout
+
+This approach helps overcome agreement bias and provides a more accurate picture of an individual's burnout state.
+
+
 ## Interpretation
 
 The Burnout Recovery Index is calculated based on responses to 240 questions across 12 categories. Each category contains 20 questions: 10 positively framed (Set A) and 10 negatively framed (Set B).
@@ -43,15 +53,6 @@ This assessment is designed to be taken periodically (e.g., monthly or quarterly
 While this index provides objective measures, it is not a diagnostic tool. Individuals with persistent low scores or concerns about their mental health should consult with a healthcare professional.
 
 As more data is gathered, future versions of this interpretation guide will include general guidelines about which aggregate scores typically represent different levels of burnout.
-
-## Methodology
-The assessment is based on:
-- Likert-scale questions (1-5 rating)
-- Bipolar question pairs (positive and negative framing)
-- Split-half consistency to reduce response bias
-- 12 categories of symptoms typically associated with burnout
-
-This approach helps overcome agreement bias and provides a more accurate picture of an individual's burnout state.
 
 ## Categories
 The assessment covers 12 key areas associated with burnout:

@@ -82,8 +82,6 @@ The assessment covers 12 key areas associated with burnout:
 
 ## Full Question Set
 
-## Full Question Set
-
 ### 1. Sleep
 
 #### Set A (Positive framing):

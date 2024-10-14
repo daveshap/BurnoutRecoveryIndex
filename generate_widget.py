@@ -109,7 +109,7 @@ def generate_html():
 </html>
 '''
 
-    with open('burnout_recovery_index.html', 'w') as htmlfile:
+    with open('widget.html', 'w') as htmlfile:
         htmlfile.write(html_content)
 
 if __name__ == '__main__':

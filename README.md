@@ -1,7 +1,14 @@
 # Burnout Recovery Index
 
+
+
+
 ## Purpose
 This project aims to create a reliable self-assessment inventory to measure burnout without medical interventions. The Burnout Recovery Index provides individuals with an objective tool to assess their current level of burnout and track changes over time.
+
+
+
+
 
 ## Methodology
 The assessment is based on:
@@ -11,6 +18,10 @@ The assessment is based on:
 - 12 categories of symptoms typically associated with burnout
 
 This approach helps overcome agreement bias and provides a more accurate picture of an individual's burnout state.
+
+
+
+
 
 
 ## Categories
@@ -28,6 +39,33 @@ The assessment covers 12 key areas associated with burnout:
 10. **Self-Care and Leisure**: Neglecting self-care often accompanies burnout. This section assesses engagement in relaxation and personal interests.
 11. **Stress Management**: The ability to cope with stress is crucial. This category measures stress perception and management techniques.
 12. **Work-Life Balance**: Imbalance between work and personal life can contribute to burnout. This section evaluates the integration of professional and personal aspects of life.
+
+
+
+
+
+
+## This Repo
+
+This repository contains the necessary files to generate and use the Burnout Recovery Index assessment tool. It includes a CSV file with all the questions, a Python script to generate the HTML widget, and the resulting HTML file that can be used to administer the assessment.
+
+Here's a breakdown of the repository contents:
+
+| File Name | Description |
+|-----------|-------------|
+| README.md | This file, containing information about the project and repo |
+| LICENSE | The license file for this project |
+| questions.csv | CSV file containing all 240 questions for the assessment |
+| generate_widget.py | Python script to generate the HTML widget from the CSV file |
+| widget.html | The generated HTML file containing the interactive assessment tool |
+
+To use this repo:
+
+1. Clone the repository
+2. Ensure you have Python installed
+3. Run `generate_widget.py` to create or update the `widget.html` file
+4. Open `widget.html` in a web browser to use the Burnout Recovery Index assessment tool
+
 
 
 

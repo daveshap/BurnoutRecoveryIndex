@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnout Recovery Index - Sleep Category</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .category { font-weight: bold; background-color: #e9e9e9; }
+        input[type="radio"] { margin: 0 5px; }
+        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Burnout Recovery Index - Sleep Category</h1>
+    <form id="burnoutForm">
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+            </tr>
+            <tr class="category">
+                <td colspan="6">Sleep A</td>
+            </tr>
+            <tr>
+                <td>I fall asleep easily within 30 minutes of going to bed.</td>
+                <td><input type="radio" name="q1" value="1" required></td>
+                <td><input type="radio" name="q1" value="2"></td>
+                <td><input type="radio" name="q1" value="3"></td>
+                <td><input type="radio" name="q1" value="4"></td>
+                <td><input type="radio" name="q1" value="5"></td>
+            </tr>
+            <tr>
+                <td>I sleep through the night without waking up.</td>
+                <td><input type="radio" name="q2" value="1" required></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+            </tr>
+            <tr>
+                <td>I feel well-rested and refreshed when I wake up in the morning.</td>
+                <td><input type="radio" name="q3" value="1" required></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+            </tr>
+            <tr>
+                <td>I maintain a consistent sleep schedule, even on weekends.</td>
+                <td><input type="radio" name="q4" value="1" required></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+            </tr>
+            <tr>
+                <td>My dreams are generally pleasant and don't disturb my sleep.</td>
+                <td><input type="radio" name="q5" value="1" required></td>
+                <td><input type="radio" name="q5" value="2"></td>
+                <td><input type="radio" name="q5" value="3"></td>
+                <td><input type="radio" name="q5" value="4"></td>
+                <td><input type="radio" name="q5" value="5"></td>
+            </tr>
+            <tr>
+                <td>I wake up naturally at the right time without needing an alarm.</td>
+                <td><input type="radio" name="q6" value="1" required></td>
+                <td><input type="radio" name="q6" value="2"></td>
+                <td><input type="radio" name="q6" value="3"></td>
+                <td><input type="radio" name="q6" value="4"></td>
+                <td><input type="radio" name="q6" value="5"></td>
+            </tr>
+            <tr>
+                <td>I feel energized and alert during the day after a night's sleep.</td>
+                <td><input type="radio" name="q7" value="1" required></td>
+                <td><input type="radio" name="q7" value="2"></td>
+                <td><input type="radio" name="q7" value="3"></td>
+                <td><input type="radio" name="q7" value="4"></td>
+                <td><input type="radio" name="q7" value="5"></td>
+            </tr>
+            <tr>
+                <td>I can easily relax and quiet my mind when it's time to sleep.</td>
+                <td><input type="radio" name="q8" value="1" required></td>
+                <td><input type="radio" name="q8" value="2"></td>
+                <td><input type="radio" name="q8" value="3"></td>
+                <td><input type="radio" name="q8" value="4"></td>
+                <td><input type="radio" name="q8" value="5"></td>
+            </tr>
+            <tr>
+                <td>I get an adequate amount of sleep each night (7-9 hours for adults).</td>
+                <td><input type="radio" name="q9" value="1" required></td>
+                <td><input type="radio" name="q9" value="2"></td>
+                <td><input type="radio" name="q9" value="3"></td>
+                <td><input type="radio" name="q9" value="4"></td>
+                <td><input type="radio" name="q9" value="5"></td>
+            </tr>
+            <tr>
+                <td>My bedroom environment promotes good sleep (quiet, dark, comfortable).</td>
+                <td><input type="radio" name="q10" value="1" required></td>
+                <td><input type="radio" name="q10" value="2"></td>
+                <td><input type="radio" name="q10" value="3"></td>
+                <td><input type="radio" name="q10" value="4"></td>
+                <td><input type="radio" name="q10" value="5"></td>
+            </tr>
+            <tr class="category">
+                <td colspan="6">Sleep B</td>
+            </tr>
+            <tr>
+                <td>I often find myself lying awake for long periods before falling asleep.</td>
+                <td><input type="radio" name="q11" value="1" required></td>
+                <td><input type="radio" name="q11" value="2"></td>
+                <td><input type="radio" name="q11" value="3"></td>
+                <td><input type="radio" name="q11" value="4"></td>
+                <td><input type="radio" name="q11" value="5"></td>
+            </tr>
+            <tr>
+                <td>I frequently wake up during the night and have trouble getting back to sleep.</td>
+                <td><input type="radio" name="q12" value="1" required></td>
+                <td><input type="radio" name="q12" value="2"></td>
+                <td><input type="radio" name="q12" value="3"></td>
+                <td><input type="radio" name="q12" value="4"></td>
+                <td><input type="radio" name="q12" value="5"></td>
+            </tr>
+            <tr>
+                <td>I often feel groggy and tired even after a full night's sleep.</td>
+                <td><input type="radio" name="q13" value="1" required></td>
+                <td><input type="radio" name="q13" value="2"></td>
+                <td><input type="radio" name="q13" value="3"></td>
+                <td><input type="radio" name="q13" value="4"></td>
+                <td><input type="radio" name="q13" value="5"></td>
+            </tr>
+            <tr>
+                <td>My sleep schedule is irregular and varies significantly day to day.</td>
+                <td><input type="radio" name="q14" value="1" required></td>
+                <td><input type="radio" name="q14" value="2"></td>
+                <td><input type="radio" name="q14" value="3"></td>
+                <td><input type="radio" name="q14" value="4"></td>
+                <td><input type="radio" name="q14" value="5"></td>
+            </tr>
+            <tr>
+                <td>I have vivid or disturbing dreams that affect my sleep quality.</td>
+                <td><input type="radio" name="q15" value="1" required></td>
+                <td><input type="radio" name="q15" value="2"></td>
+                <td><input type="radio" name="q15" value="3"></td>
+                <td><input type="radio" name="q15" value="4"></td>
+                <td><input type="radio" name="q15" value="5"></td>
+            </tr>
+            <tr>
+                <td>I rely on an alarm to wake up and often feel the need to snooze.</td>
+                <td><input type="radio" name="q16" value="1" required></td>
+                <td><input type="radio" name="q16" value="2"></td>
+                <td><input type="radio" name="q16" value="3"></td>
+                <td><input type="radio" name="q16" value="4"></td>
+                <td><input type="radio" name="q16" value="5"></td>
+            </tr>
+            <tr>
+                <td>I feel drowsy and lack energy during the day despite sleeping.</td>
+                <td><input type="radio" name="q17" value="1" required></td>
+                <td><input type="radio" name="q17" value="2"></td>
+                <td><input type="radio" name="q17" value="3"></td>
+                <td><input type="radio" name="q17" value="4"></td>
+                <td><input type="radio" name="q17" value="5"></td>
+            </tr>
+            <tr>
+                <td>Racing thoughts or worries often prevent me from falling asleep.</td>
+                <td><input type="radio" name="q18" value="1" required></td>
+                <td><input type="radio" name="q18" value="2"></td>
+                <td><input type="radio" name="q18" value="3"></td>
+                <td><input type="radio" name="q18" value="4"></td>
+                <td><input type="radio" name="q18" value="5"></td>
+            </tr>
+            <tr>
+                <td>I regularly get less sleep than I need to feel rested.</td>
+                <td><input type="radio" name="q19" value="1" required></td>
+                <td><input type="radio" name="q19" value="2"></td>
+                <td><input type="radio" name="q19" value="3"></td>
+                <td><input type="radio" name="q19" value="4"></td>
+                <td><input type="radio" name="q19" value="5"></td>
+            </tr>
+            <tr>
+                <td>Factors in my bedroom (noise, light, temperature) often disrupt my sleep.</td>
+                <td><input type="radio" name="q20" value="1" required></td>
+                <td><input type="radio" name="q20" value="2"></td>
+                <td><input type="radio" name="q20" value="3"></td>
+                <td><input type="radio" name="q20" value="4"></td>
+                <td><input type="radio" name="q20" value="5"></td>
+            </tr>
+        </table>
+        <button type="submit">Calculate Scores</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('burnoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let sleepScore = 0;
+            for (let i = 1; i <= 20; i++) {
+                const value = parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
+                sleepScore += (i <= 10) ? value : (6 - value); // Reverse scoring for Set B
+            }
+            const normalizedSleepScore = ((sleepScore - 20) / 80) * 100; // Normalize to 0-100 scale
+            
+            // Placeholder for aggregate score calculation
+            const aggregateScore = normalizedSleepScore; // This will change when we add more categories
+            
+            document.getElementById('result').innerHTML = `
+                <p>Sleep Category Score: ${normalizedSleepScore.toFixed(2)} / 100</p>
+                <p>Aggregate Score: ${aggregateScore.toFixed(2)} / 100</p>
+            `;
+        });
+    </script>
+</body>
+</html>

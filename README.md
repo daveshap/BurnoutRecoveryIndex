@@ -94,6 +94,19 @@ The assessment provides:
 1. Individual scores for each of the 12 categories (0-100)
 2. An aggregate score (0-100), calculated as the average of all category scores
 
+Claude offered the following interpretation scales (NOT VERIFIED!)
+
+1. **Full Recovery/Optimal Well-being: 90-100:** This range would represent someone who is thriving in almost all areas of life.
+2. **Minimal to No Burnout: 80-89:** Individuals in this range are generally doing well, with only minor areas for improvement.
+3. **Mild Burnout: 70-79:** This is where you currently fall. There's room for improvement, but you're managing well overall.
+4. **Moderate Burnout: 55-69:** Significant impacts on well-being and functioning, but not severe.
+5. **Severe Burnout: 40-54:** Major impairments across multiple life domains.
+6. **Critical Burnout: 25-39:** Extremely compromised functioning, urgent intervention needed.
+7. **Full Burnout / Crisis: Below 25:** This would represent a state of complete exhaustion and dysfunction across all areas.
+
+Note: this scale is likely wayyyyy off. It's entirely possible or likely that a score below 50 constitutes "full burnout" 
+
+
 ### Interpretation
 
 - Higher scores indicate better recovery or less burnout in that area.

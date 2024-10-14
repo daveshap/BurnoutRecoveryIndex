@@ -1,223 +1,2294 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burnout Recovery Index - Sleep Category</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .category { font-weight: bold; background-color: #e9e9e9; }
-        input[type="radio"] { margin: 0 5px; }
-        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; }
-        button:hover { background-color: #45a049; }
-        #result { margin-top: 20px; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <h1>Burnout Recovery Index - Sleep Category</h1>
-    <form id="burnoutForm">
-        <table>
-            <tr>
-                <th>Question</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-            </tr>
-            <tr class="category">
-                <td colspan="6">Sleep A</td>
-            </tr>
-            <tr>
-                <td>I fall asleep easily within 30 minutes of going to bed.</td>
-                <td><input type="radio" name="q1" value="1" required></td>
-                <td><input type="radio" name="q1" value="2"></td>
-                <td><input type="radio" name="q1" value="3"></td>
-                <td><input type="radio" name="q1" value="4"></td>
-                <td><input type="radio" name="q1" value="5"></td>
-            </tr>
-            <tr>
-                <td>I sleep through the night without waking up.</td>
-                <td><input type="radio" name="q2" value="1" required></td>
-                <td><input type="radio" name="q2" value="2"></td>
-                <td><input type="radio" name="q2" value="3"></td>
-                <td><input type="radio" name="q2" value="4"></td>
-                <td><input type="radio" name="q2" value="5"></td>
-            </tr>
-            <tr>
-                <td>I feel well-rested and refreshed when I wake up in the morning.</td>
-                <td><input type="radio" name="q3" value="1" required></td>
-                <td><input type="radio" name="q3" value="2"></td>
-                <td><input type="radio" name="q3" value="3"></td>
-                <td><input type="radio" name="q3" value="4"></td>
-                <td><input type="radio" name="q3" value="5"></td>
-            </tr>
-            <tr>
-                <td>I maintain a consistent sleep schedule, even on weekends.</td>
-                <td><input type="radio" name="q4" value="1" required></td>
-                <td><input type="radio" name="q4" value="2"></td>
-                <td><input type="radio" name="q4" value="3"></td>
-                <td><input type="radio" name="q4" value="4"></td>
-                <td><input type="radio" name="q4" value="5"></td>
-            </tr>
-            <tr>
-                <td>My dreams are generally pleasant and don't disturb my sleep.</td>
-                <td><input type="radio" name="q5" value="1" required></td>
-                <td><input type="radio" name="q5" value="2"></td>
-                <td><input type="radio" name="q5" value="3"></td>
-                <td><input type="radio" name="q5" value="4"></td>
-                <td><input type="radio" name="q5" value="5"></td>
-            </tr>
-            <tr>
-                <td>I wake up naturally at the right time without needing an alarm.</td>
-                <td><input type="radio" name="q6" value="1" required></td>
-                <td><input type="radio" name="q6" value="2"></td>
-                <td><input type="radio" name="q6" value="3"></td>
-                <td><input type="radio" name="q6" value="4"></td>
-                <td><input type="radio" name="q6" value="5"></td>
-            </tr>
-            <tr>
-                <td>I feel energized and alert during the day after a night's sleep.</td>
-                <td><input type="radio" name="q7" value="1" required></td>
-                <td><input type="radio" name="q7" value="2"></td>
-                <td><input type="radio" name="q7" value="3"></td>
-                <td><input type="radio" name="q7" value="4"></td>
-                <td><input type="radio" name="q7" value="5"></td>
-            </tr>
-            <tr>
-                <td>I can easily relax and quiet my mind when it's time to sleep.</td>
-                <td><input type="radio" name="q8" value="1" required></td>
-                <td><input type="radio" name="q8" value="2"></td>
-                <td><input type="radio" name="q8" value="3"></td>
-                <td><input type="radio" name="q8" value="4"></td>
-                <td><input type="radio" name="q8" value="5"></td>
-            </tr>
-            <tr>
-                <td>I get an adequate amount of sleep each night (7-9 hours for adults).</td>
-                <td><input type="radio" name="q9" value="1" required></td>
-                <td><input type="radio" name="q9" value="2"></td>
-                <td><input type="radio" name="q9" value="3"></td>
-                <td><input type="radio" name="q9" value="4"></td>
-                <td><input type="radio" name="q9" value="5"></td>
-            </tr>
-            <tr>
-                <td>My bedroom environment promotes good sleep (quiet, dark, comfortable).</td>
-                <td><input type="radio" name="q10" value="1" required></td>
-                <td><input type="radio" name="q10" value="2"></td>
-                <td><input type="radio" name="q10" value="3"></td>
-                <td><input type="radio" name="q10" value="4"></td>
-                <td><input type="radio" name="q10" value="5"></td>
-            </tr>
-            <tr class="category">
-                <td colspan="6">Sleep B</td>
-            </tr>
-            <tr>
-                <td>I often find myself lying awake for long periods before falling asleep.</td>
-                <td><input type="radio" name="q11" value="1" required></td>
-                <td><input type="radio" name="q11" value="2"></td>
-                <td><input type="radio" name="q11" value="3"></td>
-                <td><input type="radio" name="q11" value="4"></td>
-                <td><input type="radio" name="q11" value="5"></td>
-            </tr>
-            <tr>
-                <td>I frequently wake up during the night and have trouble getting back to sleep.</td>
-                <td><input type="radio" name="q12" value="1" required></td>
-                <td><input type="radio" name="q12" value="2"></td>
-                <td><input type="radio" name="q12" value="3"></td>
-                <td><input type="radio" name="q12" value="4"></td>
-                <td><input type="radio" name="q12" value="5"></td>
-            </tr>
-            <tr>
-                <td>I often feel groggy and tired even after a full night's sleep.</td>
-                <td><input type="radio" name="q13" value="1" required></td>
-                <td><input type="radio" name="q13" value="2"></td>
-                <td><input type="radio" name="q13" value="3"></td>
-                <td><input type="radio" name="q13" value="4"></td>
-                <td><input type="radio" name="q13" value="5"></td>
-            </tr>
-            <tr>
-                <td>My sleep schedule is irregular and varies significantly day to day.</td>
-                <td><input type="radio" name="q14" value="1" required></td>
-                <td><input type="radio" name="q14" value="2"></td>
-                <td><input type="radio" name="q14" value="3"></td>
-                <td><input type="radio" name="q14" value="4"></td>
-                <td><input type="radio" name="q14" value="5"></td>
-            </tr>
-            <tr>
-                <td>I have vivid or disturbing dreams that affect my sleep quality.</td>
-                <td><input type="radio" name="q15" value="1" required></td>
-                <td><input type="radio" name="q15" value="2"></td>
-                <td><input type="radio" name="q15" value="3"></td>
-                <td><input type="radio" name="q15" value="4"></td>
-                <td><input type="radio" name="q15" value="5"></td>
-            </tr>
-            <tr>
-                <td>I rely on an alarm to wake up and often feel the need to snooze.</td>
-                <td><input type="radio" name="q16" value="1" required></td>
-                <td><input type="radio" name="q16" value="2"></td>
-                <td><input type="radio" name="q16" value="3"></td>
-                <td><input type="radio" name="q16" value="4"></td>
-                <td><input type="radio" name="q16" value="5"></td>
-            </tr>
-            <tr>
-                <td>I feel drowsy and lack energy during the day despite sleeping.</td>
-                <td><input type="radio" name="q17" value="1" required></td>
-                <td><input type="radio" name="q17" value="2"></td>
-                <td><input type="radio" name="q17" value="3"></td>
-                <td><input type="radio" name="q17" value="4"></td>
-                <td><input type="radio" name="q17" value="5"></td>
-            </tr>
-            <tr>
-                <td>Racing thoughts or worries often prevent me from falling asleep.</td>
-                <td><input type="radio" name="q18" value="1" required></td>
-                <td><input type="radio" name="q18" value="2"></td>
-                <td><input type="radio" name="q18" value="3"></td>
-                <td><input type="radio" name="q18" value="4"></td>
-                <td><input type="radio" name="q18" value="5"></td>
-            </tr>
-            <tr>
-                <td>I regularly get less sleep than I need to feel rested.</td>
-                <td><input type="radio" name="q19" value="1" required></td>
-                <td><input type="radio" name="q19" value="2"></td>
-                <td><input type="radio" name="q19" value="3"></td>
-                <td><input type="radio" name="q19" value="4"></td>
-                <td><input type="radio" name="q19" value="5"></td>
-            </tr>
-            <tr>
-                <td>Factors in my bedroom (noise, light, temperature) often disrupt my sleep.</td>
-                <td><input type="radio" name="q20" value="1" required></td>
-                <td><input type="radio" name="q20" value="2"></td>
-                <td><input type="radio" name="q20" value="3"></td>
-                <td><input type="radio" name="q20" value="4"></td>
-                <td><input type="radio" name="q20" value="5"></td>
-            </tr>
-        </table>
-        <button type="submit">Calculate Scores</button>
-    </form>
-    <div id="result"></div>
 
-    <script>
-        document.getElementById('burnoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let sleepScore = 0;
-            for (let i = 1; i <= 20; i++) {
-                const value = parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
-                sleepScore += (i <= 10) ? value : (6 - value); // Reverse scoring for Set B
+    <html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
             }
-            const normalizedSleepScore = ((sleepScore - 20) / 80) * 100; // Normalize to 0-100 scale
-            
-            // Placeholder for aggregate score calculation
-            const aggregateScore = normalizedSleepScore; // This will change when we add more categories
-            
-            document.getElementById('result').innerHTML = `
-                <p>Sleep Category Score: ${normalizedSleepScore.toFixed(2)} / 100</p>
-                <p>Aggregate Score: ${aggregateScore.toFixed(2)} / 100</p>
-            `;
-        });
-    </script>
-</body>
-</html>
+            table {
+                width: auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            td.question {
+                width: 300px;
+            }
+            button {
+                margin: 5px;
+                padding: 10px;
+                font-size: 14px;
+            }
+            .section-header {
+                background-color: #e0e0e0;
+                font-weight: bold;
+            }
+            .question-row:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .question-row:nth-child(odd) {
+                background-color: #e6f7ff;
+            }
+        </style>
+        <script>
+            function calculateScore() {
+                let categoryScores = {};
+                let categoryCounts = {};
+
+                let inputs = document.querySelectorAll('input[type=radio]:checked');
+
+                inputs.forEach(input => {
+                    let category = input.name.split('-')[0];
+                    let questionType = input.dataset.type;
+                    let value = parseInt(input.value);
+
+                    if (!categoryScores[category]) {
+                        categoryScores[category] = { sumA: 0, sumB: 0 };
+                        categoryCounts[category] = { countA: 0, countB: 0 };
+                    }
+
+                    if (questionType === 'A') {
+                        categoryScores[category].sumA += value;
+                        categoryCounts[category].countA += 1;
+                    } else if (questionType === 'B') {
+                        categoryScores[category].sumB += value;
+                        categoryCounts[category].countB += 1;
+                    }
+                });
+
+                let results = '';
+                let totalScore = 0;
+                let categoryNames = Object.keys(categoryScores);
+
+                categoryNames.forEach(category => {
+                    let sumA = categoryScores[category].sumA;
+                    let sumB = categoryScores[category].sumB;
+                    let n = categoryCounts[category].countA; // Assuming countA == countB
+
+                    let rawScore = sumA - sumB;
+
+                    let minPossibleScore = -4 * n;
+                    let maxPossibleScore = 4 * n;
+
+                    let normalizedScore = ((rawScore - minPossibleScore) / (maxPossibleScore - minPossibleScore)) * 100;
+
+                    totalScore += normalizedScore;
+                    results += `${category} Category Score: ${normalizedScore.toFixed(2)} / 100<br>`;
+                });
+
+                let aggregateScore = totalScore / categoryNames.length;
+                results += `<br>Aggregate Score: ${aggregateScore.toFixed(2)} / 100`;
+
+                document.getElementById('results').innerHTML = results;
+            }
+
+            function debugSetAll(value) {
+                let inputs = document.querySelectorAll('input[type=radio]');
+
+                inputs.forEach(input => {
+                    if (parseInt(input.value) === value) {
+                        input.checked = true;
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Burnout Recovery Index</h2>
+        <p>When marking this assessment, please use the following guidelines:</p>
+        <ul>
+            <li>1 - disagree strongly</li>
+            <li>2 - disagree somewhat</li>
+            <li>3 - neutral/mixed</li>
+            <li>4 - agree somewhat</li>
+            <li>5 - agree strongly</li>
+        </ul>
+        <form>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+    <tr class='section-header'><td colspan='6'>Sleep - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I fall asleep easily within 30 minutes of going to bed.</td>
+                        <td><input type="radio" name="Sleep-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I sleep through the night without waking up.</td>
+                        <td><input type="radio" name="Sleep-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel well-rested and refreshed when I wake up in the morning.</td>
+                        <td><input type="radio" name="Sleep-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I maintain a consistent sleep schedule, even on weekends.</td>
+                        <td><input type="radio" name="Sleep-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My dreams are generally pleasant and don't disturb my sleep.</td>
+                        <td><input type="radio" name="Sleep-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I wake up naturally at the right time without needing an alarm.</td>
+                        <td><input type="radio" name="Sleep-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel energized and alert during the day after a night's sleep.</td>
+                        <td><input type="radio" name="Sleep-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can easily relax and quiet my mind when it's time to sleep.</td>
+                        <td><input type="radio" name="Sleep-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I get an adequate amount of sleep each night (7-9 hours for adults).</td>
+                        <td><input type="radio" name="Sleep-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My bedroom environment promotes good sleep (quiet, dark, comfortable).</td>
+                        <td><input type="radio" name="Sleep-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Sleep-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Sleep - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often find myself lying awake for long periods before falling asleep.</td>
+                        <td><input type="radio" name="Sleep-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently wake up during the night and have trouble getting back to sleep.</td>
+                        <td><input type="radio" name="Sleep-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel groggy and tired even after a full night's sleep.</td>
+                        <td><input type="radio" name="Sleep-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My sleep schedule is irregular and varies significantly day to day.</td>
+                        <td><input type="radio" name="Sleep-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have vivid or disturbing dreams that affect my sleep quality.</td>
+                        <td><input type="radio" name="Sleep-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rely on an alarm to wake up and often feel the need to snooze.</td>
+                        <td><input type="radio" name="Sleep-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel drowsy and lack energy during the day despite sleeping.</td>
+                        <td><input type="radio" name="Sleep-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Racing thoughts or worries often prevent me from falling asleep.</td>
+                        <td><input type="radio" name="Sleep-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I regularly get less sleep than I need to feel rested.</td>
+                        <td><input type="radio" name="Sleep-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Factors in my bedroom (noise, light, temperature) often disrupt my sleep.</td>
+                        <td><input type="radio" name="Sleep-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Sleep-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Work - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I feel capable of handling my workload effectively.</td>
+                        <td><input type="radio" name="Work-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find my work engaging and meaningful.</td>
+                        <td><input type="radio" name="Work-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can maintain focus and concentration throughout my workday.</td>
+                        <td><input type="radio" name="Work-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel confident in my ability to meet work deadlines.</td>
+                        <td><input type="radio" name="Work-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a good relationship with my colleagues and supervisors.</td>
+                        <td><input type="radio" name="Work-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel my skills and abilities are well-utilized in my job.</td>
+                        <td><input type="radio" name="Work-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can easily prioritize tasks and manage my time at work.</td>
+                        <td><input type="radio" name="Work-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel recognized and appreciated for my contributions at work.</td>
+                        <td><input type="radio" name="Work-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can maintain a healthy work-life balance.</td>
+                        <td><input type="radio" name="Work-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel motivated to start my workday.</td>
+                        <td><input type="radio" name="Work-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Work - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">My job responsibilities often overwhelm me.</td>
+                        <td><input type="radio" name="Work-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find my work boring or unfulfilling.</td>
+                        <td><input type="radio" name="Work-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to stay focused and productive during work hours.</td>
+                        <td><input type="radio" name="Work-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently worry about missing deadlines or underperforming at work.</td>
+                        <td><input type="radio" name="Work-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often experience conflicts or tension with coworkers or superiors.</td>
+                        <td><input type="radio" name="Work-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel my talents and skills are underutilized in my current role.</td>
+                        <td><input type="radio" name="Work-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel scattered and have trouble managing my workload.</td>
+                        <td><input type="radio" name="Work-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel undervalued or unappreciated at my workplace.</td>
+                        <td><input type="radio" name="Work-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My work often interferes with my personal life and relationships.</td>
+                        <td><input type="radio" name="Work-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I dread going to work most days.</td>
+                        <td><input type="radio" name="Work-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Physical Health - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I maintain a balanced and nutritious diet most days.</td>
+                        <td><input type="radio" name="Physical Health-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I engage in regular physical exercise or activity.</td>
+                        <td><input type="radio" name="Physical Health-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely experience unexplained aches or pains in my body.</td>
+                        <td><input type="radio" name="Physical Health-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My digestion functions well without frequent discomfort.</td>
+                        <td><input type="radio" name="Physical Health-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel physically resilient and rarely get sick.</td>
+                        <td><input type="radio" name="Physical Health-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I recover quickly when I do catch an illness.</td>
+                        <td><input type="radio" name="Physical Health-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel satisfied with my overall physical health.</td>
+                        <td><input type="radio" name="Physical Health-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a good appetite and enjoy my meals.</td>
+                        <td><input type="radio" name="Physical Health-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel my body is capable of handling daily physical tasks with ease.</td>
+                        <td><input type="radio" name="Physical Health-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I trust that my healthcare providers understand and address my concerns.</td>
+                        <td><input type="radio" name="Physical Health-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Physical Health-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Physical Health - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often rely on unhealthy food choices or irregular eating patterns.</td>
+                        <td><input type="radio" name="Physical Health-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find time or motivation for regular physical activity.</td>
+                        <td><input type="radio" name="Physical Health-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently experience unexplained physical discomfort or pain.</td>
+                        <td><input type="radio" name="Physical Health-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often have digestive issues or gastrointestinal discomfort.</td>
+                        <td><input type="radio" name="Physical Health-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I seem to catch colds or infections more frequently than others.</td>
+                        <td><input type="radio" name="Physical Health-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">It takes me longer than usual to recover from minor illnesses.</td>
+                        <td><input type="radio" name="Physical Health-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel physically unwell without a clear medical explanation.</td>
+                        <td><input type="radio" name="Physical Health-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I've experienced significant changes in my appetite or weight.</td>
+                        <td><input type="radio" name="Physical Health-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Simple physical tasks often feel more challenging than they should.</td>
+                        <td><input type="radio" name="Physical Health-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel frustrated that medical professionals can't fully address my health concerns.</td>
+                        <td><input type="radio" name="Physical Health-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Physical Health-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Mental Health - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I generally feel optimistic about my future.</td>
+                        <td><input type="radio" name="Mental Health-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can manage my worries and anxieties effectively.</td>
+                        <td><input type="radio" name="Mental Health-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I maintain emotional stability most of the time.</td>
+                        <td><input type="radio" name="Mental Health-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I enjoy spending time with others and feel socially connected.</td>
+                        <td><input type="radio" name="Mental Health-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find meaning and purpose in my daily life.</td>
+                        <td><input type="radio" name="Mental Health-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel that life is worth living.</td>
+                        <td><input type="radio" name="Mental Health-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can see the good in people and society overall.</td>
+                        <td><input type="radio" name="Mental Health-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can experience joy and pleasure in my daily activities.</td>
+                        <td><input type="radio" name="Mental Health-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel capable of handling life's challenges.</td>
+                        <td><input type="radio" name="Mental Health-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a positive self-image and sense of self-worth.</td>
+                        <td><input type="radio" name="Mental Health-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Mental Health-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Mental Health - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often feel sad, empty, or hopeless about my future.</td>
+                        <td><input type="radio" name="Mental Health-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently experience overwhelming anxiety or panic.</td>
+                        <td><input type="radio" name="Mental Health-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have difficulty controlling my anger or experience frequent emotional outbursts.</td>
+                        <td><input type="radio" name="Mental Health-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel isolated and disconnected from others.</td>
+                        <td><input type="radio" name="Mental Health-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find meaning or purpose in my life.</td>
+                        <td><input type="radio" name="Mental Health-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have thoughts that I would be better off not being alive.</td>
+                        <td><input type="radio" name="Mental Health-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel cynical or negative about people and society.</td>
+                        <td><input type="radio" name="Mental Health-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find it hard to enjoy things that I used to find pleasurable.</td>
+                        <td><input type="radio" name="Mental Health-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel overwhelmed by life's challenges and unable to cope.</td>
+                        <td><input type="radio" name="Mental Health-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle with feelings of worthlessness or excessive guilt.</td>
+                        <td><input type="radio" name="Mental Health-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Mental Health-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Energy and Fatigue - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I have enough energy to complete my daily tasks without feeling exhausted.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can maintain a consistent level of activity throughout the day.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel motivated to engage in regular exercise or physical activities.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I wake up feeling refreshed and ready to start my day.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can focus on tasks without my eyes feeling strained or tired.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely need caffeine or other stimulants to get through the day.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have enough energy for both work and leisure activities.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can easily motivate myself to start and complete tasks.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel physically energized even after a full day of activities.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can engage in social activities after work without feeling completely drained.</td>
+                        <td><input type="radio" name="Energy and Fatigue-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Energy and Fatigue-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Energy and Fatigue - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often feel so exhausted that I collapse on the couch after work.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My energy levels fluctuate dramatically throughout the day.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find the energy or motivation to exercise regularly.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I wake up feeling tired, even after a full night's sleep.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My eyes often feel strained or tired, making it hard to focus.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rely heavily on caffeine or other stimulants to function throughout the day.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">After work, I have little to no energy left for other activities.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often procrastinate or avoid tasks due to lack of energy.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Simple physical tasks leave me feeling unusually tired.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently cancel social plans because I feel too fatigued.</td>
+                        <td><input type="radio" name="Energy and Fatigue-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Energy and Fatigue-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Social Relationships - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I actively seek out opportunities to spend time with others.</td>
+                        <td><input type="radio" name="Social Relationships-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find social interactions energizing and enjoyable.</td>
+                        <td><input type="radio" name="Social Relationships-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I look forward to meeting new people and socializing.</td>
+                        <td><input type="radio" name="Social Relationships-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often initiate or organize group activities with friends or colleagues.</td>
+                        <td><input type="radio" name="Social Relationships-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I make a consistent effort to connect with several people each week.</td>
+                        <td><input type="radio" name="Social Relationships-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My relationships feel deep, trusting, and secure.</td>
+                        <td><input type="radio" name="Social Relationships-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel confident that I can rely on others for support when needed.</td>
+                        <td><input type="radio" name="Social Relationships-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I maintain a healthy balance between my social life and alone time.</td>
+                        <td><input type="radio" name="Social Relationships-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel comfortable opening up to others about my thoughts and feelings.</td>
+                        <td><input type="radio" name="Social Relationships-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I actively contribute to and participate in my social circles.</td>
+                        <td><input type="radio" name="Social Relationships-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Social Relationships-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Social Relationships - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often avoid social situations and prefer to be alone.</td>
+                        <td><input type="radio" name="Social Relationships-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find spending time with friends to be emotionally draining.</td>
+                        <td><input type="radio" name="Social Relationships-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">The thought of social interactions often fills me with dread.</td>
+                        <td><input type="radio" name="Social Relationships-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely initiate social plans and tend to decline invitations.</td>
+                        <td><input type="radio" name="Social Relationships-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I go for long periods without meaningful social contact.</td>
+                        <td><input type="radio" name="Social Relationships-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My relationships feel superficial or lacking in trust.</td>
+                        <td><input type="radio" name="Social Relationships-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I hesitate to ask for help, feeling I can't rely on others for support.</td>
+                        <td><input type="radio" name="Social Relationships-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel overwhelmed by social obligations and crave more alone time.</td>
+                        <td><input type="radio" name="Social Relationships-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to share my true thoughts and feelings with others.</td>
+                        <td><input type="radio" name="Social Relationships-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel disconnected or out of place in my social groups.</td>
+                        <td><input type="radio" name="Social Relationships-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Social Relationships-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Cognitive Function - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">My thoughts are generally clear and focused.</td>
+                        <td><input type="radio" name="Cognitive Function-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can easily recall words and names when I need them.</td>
+                        <td><input type="radio" name="Cognitive Function-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can control my focus, shifting between tasks as needed.</td>
+                        <td><input type="radio" name="Cognitive Function-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I'm aware of time passing and can manage my time effectively.</td>
+                        <td><input type="radio" name="Cognitive Function-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can easily comprehend and retain new information when reading.</td>
+                        <td><input type="radio" name="Cognitive Function-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can initiate tasks without significant mental effort.</td>
+                        <td><input type="radio" name="Cognitive Function-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My memory for recent events and information is reliable.</td>
+                        <td><input type="radio" name="Cognitive Function-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can multitask effectively when necessary.</td>
+                        <td><input type="radio" name="Cognitive Function-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can articulate my thoughts clearly in conversations or writing.</td>
+                        <td><input type="radio" name="Cognitive Function-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can maintain concentration even in distracting environments.</td>
+                        <td><input type="radio" name="Cognitive Function-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Cognitive Function-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Cognitive Function - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often experience "brain fog" or mental cloudiness.</td>
+                        <td><input type="radio" name="Cognitive Function-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently struggle to find the right words or remember names.</td>
+                        <td><input type="radio" name="Cognitive Function-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find myself hyperfocusing on tasks without intending to.</td>
+                        <td><input type="radio" name="Cognitive Function-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I lose track of time easily, working for long periods without realizing.</td>
+                        <td><input type="radio" name="Cognitive Function-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have difficulty understanding or remembering what I've just read.</td>
+                        <td><input type="radio" name="Cognitive Function-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to start tasks, feeling mentally "stuck" (executive dysfunction).</td>
+                        <td><input type="radio" name="Cognitive Function-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often forget recent conversations or information I've just learned.</td>
+                        <td><input type="radio" name="Cognitive Function-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Switching between tasks feels overwhelming and disorienting.</td>
+                        <td><input type="radio" name="Cognitive Function-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have trouble organizing my thoughts or expressing them coherently.</td>
+                        <td><input type="radio" name="Cognitive Function-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My mind often feels like it's racing and I can't slow my thoughts.</td>
+                        <td><input type="radio" name="Cognitive Function-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Cognitive Function-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Motivation and Purpose - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I have a clear sense of direction in my life.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel I'm on the right path, aligned with my goals and values.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My daily activities are meaningful and align with what I care about.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">The people in my life support and contribute to my sense of purpose.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a clear understanding of my personal values and live by them.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I would continue much of what I do even if money were no object.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel a sense of pride and accomplishment in my work and activities.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I'm excited about my future and the possibilities it holds.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel my life has a meaningful impact on others or the world.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I wake up most days feeling motivated and purposeful.</td>
+                        <td><input type="radio" name="Motivation and Purpose-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Motivation and Purpose-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Motivation and Purpose - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I feel lost or directionless in life.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel like I'm on the wrong path or have made wrong choices.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My daily activities feel meaningless or disconnected from my values.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">The people in my life don't support or understand my goals and aspirations.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to identify my core values or live up to them.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I would completely change my life if I had unlimited resources.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely feel proud of my work or accomplishments.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel anxious or apathetic about my future.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I doubt whether my life makes any significant difference to others or the world.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often struggle to find motivation or purpose in my daily life.</td>
+                        <td><input type="radio" name="Motivation and Purpose-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Motivation and Purpose-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Emotional Regulation - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I'm generally aware of my emotions and what triggers them.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have effective strategies to improve my mood when needed.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I've established healthy routines that support my emotional well-being.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel in control of my emotional responses to situations.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can maintain composure even when faced with minor annoyances.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I'm able to create emotional distance from people or situations that bother me.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can express my emotions in a healthy and constructive manner.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I recover quickly from setbacks or disappointments.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can calm myself down when feeling stressed or overwhelmed.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I'm able to experience and process difficult emotions without being overwhelmed by them.</td>
+                        <td><input type="radio" name="Emotional Regulation-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Emotional Regulation-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Emotional Regulation - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I often feel confused about my emotions or why I'm feeling them.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find ways to improve my mood when I'm feeling down.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My emotional state feels chaotic and unpredictable most days.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel like my emotions control me, rather than the other way around.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Small annoyances often get under my skin and affect me significantly.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have difficulty distancing myself emotionally from troubling people or situations.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often express my emotions in ways that I later regret.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Setbacks or disappointments tend to affect me for a long time.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">When stressed or overwhelmed, I struggle to calm myself down.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Difficult emotions often feel overwhelming and unmanageable.</td>
+                        <td><input type="radio" name="Emotional Regulation-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Emotional Regulation-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Self-Care and Leisure - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I consistently make time for myself and my personal needs.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I regularly experience joy and pleasure in my daily life.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I treat my body with respect, prioritizing its health and well-being.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have effective strategies to recover from stressful or demanding days.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I actively invest time and resources in activities that promote my well-being and enjoyment.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I engage in hobbies or interests that are purely for my own enjoyment.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I set and maintain healthy boundaries to protect my personal time.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel refreshed and recharged after my leisure activities.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I prioritize rest and relaxation without feeling guilty.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a good balance between productivity and leisure in my life.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Self-Care and Leisure - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I struggle to find time for myself amid my responsibilities.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely feel a sense of joy or pleasure in my daily activities.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often neglect my physical health and well-being.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">After stressful days, I find it hard to unwind or recover effectively.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I seldom invest in activities solely for my own enjoyment or health.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I've lost touch with hobbies or interests that once brought me pleasure.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often let others' needs override my own need for personal time.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My leisure activities often leave me feeling drained rather than refreshed.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel guilty when I take time to rest or relax.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My life feels overwhelmingly focused on work or obligations, with little room for leisure.</td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Self-Care and Leisure-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Stress Management - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I can handle daily challenges without becoming overly stressed.</td>
+                        <td><input type="radio" name="Stress Management-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I proactively plan and organize to minimize potential stressors.</td>
+                        <td><input type="radio" name="Stress Management-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I rarely feel caught off guard by unexpected situations at work or home.</td>
+                        <td><input type="radio" name="Stress Management-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have effective strategies to cope with various life challenges.</td>
+                        <td><input type="radio" name="Stress Management-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Unplugging at the end of the day significantly reduces my stress levels.</td>
+                        <td><input type="radio" name="Stress Management-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I engage in reliable activities that help me release tension and stress.</td>
+                        <td><input type="radio" name="Stress Management-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a strong support network that helps me navigate life's ups and downs.</td>
+                        <td><input type="radio" name="Stress Management-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can identify signs of stress in myself early and take action to address them.</td>
+                        <td><input type="radio" name="Stress Management-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I maintain a positive outlook even when facing difficult situations.</td>
+                        <td><input type="radio" name="Stress Management-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can adapt quickly to changes and new circumstances without excessive stress.</td>
+                        <td><input type="radio" name="Stress Management-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Stress Management-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Stress Management - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I feel stressed out almost every day, as if on a predictable schedule.</td>
+                        <td><input type="radio" name="Stress Management-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel unprepared for stressful situations, dealing with them as they arise.</td>
+                        <td><input type="radio" name="Stress Management-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Unexpected events frequently throw me off balance at work or home.</td>
+                        <td><input type="radio" name="Stress Management-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel ill-equipped to handle many of life's challenges effectively.</td>
+                        <td><input type="radio" name="Stress Management-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Even after unplugging at day's end, I still feel wound up and stressed.</td>
+                        <td><input type="radio" name="Stress Management-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find effective ways to relieve stress and tension.</td>
+                        <td><input type="radio" name="Stress Management-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel isolated in dealing with life's difficulties, lacking a support network.</td>
+                        <td><input type="radio" name="Stress Management-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often don't recognize I'm stressed until I'm already overwhelmed.</td>
+                        <td><input type="radio" name="Stress Management-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Difficult situations often lead me to feel pessimistic and defeated.</td>
+                        <td><input type="radio" name="Stress Management-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Changes and new circumstances typically cause me significant stress and anxiety.</td>
+                        <td><input type="radio" name="Stress Management-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Stress Management-B-9" value="5" data-type="B"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Work-Life Balance - Set A</td></tr>
+                    <tr class="question-row">
+                        <td class="question">I maintain clear boundaries between my work and personal life.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-0" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-0" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-0" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-0" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-0" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I engage in work during designated hours and disconnect afterwards.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-1" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-1" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-1" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-1" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-1" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find my work generally fulfilling and enjoyable.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-2" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-2" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-2" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-2" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-2" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have a healthy balance between my professional and personal activities.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-3" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-3" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-3" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-3" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-3" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel empowered to decline work requests that infringe on my personal time.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-4" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-4" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-4" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-4" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-4" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My work is an important part of my life, but it doesn't define me entirely.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-5" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-5" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-5" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-5" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-5" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I manage my energy well, avoiding overwork and burnout.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-6" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-6" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-6" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-6" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-6" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I have ample time for personal interests and relationships outside of work.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-7" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-7" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-7" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-7" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-7" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I can fully engage in leisure activities without thinking about work.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-8" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-8" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-8" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-8" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-8" value="5" data-type="A"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My workplace respects and supports my need for work-life balance.</td>
+                        <td><input type="radio" name="Work-Life Balance-A-9" value="1" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-9" value="2" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-9" value="3" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-9" value="4" data-type="A"></td>
+                        <td><input type="radio" name="Work-Life Balance-A-9" value="5" data-type="A"></td>
+                    </tr>
+                <tr class='section-header'><td colspan='6'>Work-Life Balance - Set B</td></tr>
+                    <tr class="question-row">
+                        <td class="question">The line between my work and personal life is often blurred.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-0" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-0" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-0" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-0" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-0" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I find myself working or thinking about work at all hours.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-1" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-1" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-1" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-1" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-1" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I frequently dread going to work or engaging in work tasks.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-2" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-2" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-2" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-2" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-2" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My work commitments often overshadow my personal life.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-3" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-3" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-3" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-3" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-3" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I feel pressured to accept work demands, even when they interfere with my personal time.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-4" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-4" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-4" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-4" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-4" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My work consumes my thoughts and energy, leaving little for other aspects of life.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-5" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-5" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-5" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-5" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-5" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I often feel I'm burning the candle at both ends, sacrificing personal time for work.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-6" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-6" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-6" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-6" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-6" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">I struggle to find time for personal interests or relationships due to work demands.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-7" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-7" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-7" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-7" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-7" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">Even during leisure time, I'm preoccupied with work-related thoughts.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-8" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-8" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-8" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-8" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-8" value="5" data-type="B"></td>
+                    </tr>
+                
+                    <tr class="question-row">
+                        <td class="question">My workplace expectations make it difficult to maintain a healthy work-life balance.</td>
+                        <td><input type="radio" name="Work-Life Balance-B-9" value="1" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-9" value="2" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-9" value="3" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-9" value="4" data-type="B"></td>
+                        <td><input type="radio" name="Work-Life Balance-B-9" value="5" data-type="B"></td>
+                    </tr>
+                
+            </table>
+            <br>
+            <button type="button" onclick="calculateScore()">Generate Score</button>
+            <button type="button" onclick="debugSetAll(1)">Debug (Set All to 1)</button>
+            <button type="button" onclick="debugSetAll(2)">Debug (Set All to 2)</button>
+            <button type="button" onclick="debugSetAll(3)">Debug (Set All to 3)</button>
+            <button type="button" onclick="debugSetAll(4)">Debug (Set All to 4)</button>
+            <button type="button" onclick="debugSetAll(5)">Debug (Set All to 5)</button>
+        </form>
+        <div id="results"></div>
+    </body>
+    </html>
+    

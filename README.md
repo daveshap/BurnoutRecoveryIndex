@@ -8,6 +8,10 @@ This project aims to create a reliable self-assessment inventory to measure burn
 
 
 
+## Disclaimer
+
+Burnout is generally not recognized by the medical establishment. This tool is meant for informational purposes only, and is not meant to replace or supplement medical diagnosis or treatment. Always seek health advice from trained and licensed medical professionals. 
+
 
 
 ## Methodology

@@ -105,6 +105,10 @@ def generate_widget(questions_file):
                 results += `<br>Aggregate Score: ${aggregateScore.toFixed(2)} / 100`;
 
                 document.getElementById('results').innerHTML = results;
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth",
+                });
             }
 
             function debugSetAll(value) {

@@ -20,6 +20,7 @@ def generate_widget(questions_file):
     html_content = """
     <html>
     <head>
+        <title>Burnout Recovery Index</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
